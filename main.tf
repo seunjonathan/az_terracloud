@@ -6,3 +6,16 @@ terraform {
     }
   }
 }
+
+provider "azurerm" {
+  features {}
+ }
+
+resource "azurerm_resource_group" "example" {
+  name     = "myterracloud"
+  location = "East US"
+  tags = {
+    environment = "dev"
+  }
+
+}
