@@ -28,12 +28,12 @@ variable "ARM_CLIENT_ID" {
 
 variable "ARM_CLIENT_SECRET" {
   description = "ARMCLIENTSECRET"
-  # default = ""
+  default = ""
 }
 
 variable "ARM_TENANT_ID" {
   description = "ARMTENANTID"
-  # default = ""
+  default = ""
 }
 
 resource "azurerm_resource_group" "example" {
