@@ -10,10 +10,6 @@ terraform {
 provider "azurerm" {
   features {}
 
-  # subscription_id = var.ARM_SUBSCRIPTION_ID
-  # client_id       = var.ARM_CLIENT_ID
-  # client_secret   = var.ARM_CLIENT_SECRET
-  # tenant_id       = var.ARM_TENANT_ID
  }
 
 resource "azurerm_resource_group" "example" {
@@ -23,3 +19,25 @@ resource "azurerm_resource_group" "example" {
     environment = "dev"
   }
 }
+
+resource "azurerm_storage_account" "example" {
+  name                     = "examplestorageacc"
+  resource_group_name      = azurerm_resource_group.example.name
+  location                 = azurerm_resource_group.example.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  account_kind             = "StorageV2"
+  is_hns_enabled           = "true"
+}
+
+resource "azurerm_storage_data_lake_gen2_filesystem" "example" {
+  name               = "gen1"
+  storage_account_id = azurerm_storage_account.example.id
+  
+  }
+
+  resource "azurerm_storage_data_lake_gen2_filesystem" "example" {
+  name               = "gen2"
+  storage_account_id = azurerm_storage_account.example.id
+  
+  }
