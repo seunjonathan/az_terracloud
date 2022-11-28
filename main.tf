@@ -18,18 +18,22 @@ provider "azurerm" {
 
 variable "ARM_SUBSCRIPTION_ID" {
   description = "ARM SUBSCRIPTION"
+  
 }
 
 variable "ARM_CLIENT_ID" {
   description = "ARMCLIENTID"
+  default = ""
 }
 
 variable "ARM_CLIENT_SECRET" {
   description = "ARMCLIENTSECRET"
+  default = ""
 }
 
 variable "ARM_TENANT_ID" {
   description = "ARMTENANTID"
+  default = ""
 }
 
 resource "azurerm_resource_group" "example" {
