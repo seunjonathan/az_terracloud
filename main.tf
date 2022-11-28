@@ -21,15 +21,15 @@ variable "ARM_SUBSCRIPTION_ID" {
 }
 
 variable "ARM_CLIENT_ID" {
-  description = "ARM_CLIENT_ID"
+  description = "ARMCLIENTID"
 }
 
 variable "ARM_CLIENT_SECRET" {
-  description = "ARM_CLIENT_SECRET"
+  description = "ARMCLIENTSECRET"
 }
 
 variable "ARM_TENANT_ID" {
-  description = "ARM_TENANT_ID"
+  description = "ARMTENANTID"
 }
 
 resource "azurerm_resource_group" "example" {
