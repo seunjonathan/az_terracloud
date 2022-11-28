@@ -30,13 +30,13 @@ resource "azurerm_storage_account" "example" {
   is_hns_enabled           = "true"
 }
 
-resource "azurerm_storage_data_lake_gen2_filesystem" "example" {
+resource "azurerm_storage_data_lake_gen2_filesystem" "gen1" {
   name               = "gen1"
   storage_account_id = azurerm_storage_account.example.id
   
   }
 
-  resource "azurerm_storage_data_lake_gen2_filesystem" "example" {
+  resource "azurerm_storage_data_lake_gen2_filesystem" "gen2" {
   name               = "gen2"
   storage_account_id = azurerm_storage_account.example.id
   
