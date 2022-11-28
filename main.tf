@@ -9,15 +9,31 @@ terraform {
 
 provider "azurerm" {
   features {}
-  
+
   subscription_id = var.ARM_SUBSCRIPTION_ID
   client_id       = var.ARM_CLIENT_ID
   client_secret   = var.ARM_CLIENT_SECRET
   tenant_id       = var.ARM_TENANT_ID
  }
 
+variable "ARM_SUBSCRIPTION_ID" {
+  description = "ARM SUBSCRIPTION"
+}
+
+variable "ARM_CLIENT_ID" {
+  description = "ARM_CLIENT_ID"
+}
+
+variable "ARM_CLIENT_SECRET" {
+  description = "ARM_CLIENT_SECRET"
+}
+
+variable "ARM_TENANT_ID" {
+  description = "ARM_TENANT_ID"
+}
+
 resource "azurerm_resource_group" "example" {
-  name     = "myterracloud"
+  name     = "myterrasucceed"
   location = "East US"
   tags = {
     environment = "dev"
