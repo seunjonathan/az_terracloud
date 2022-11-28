@@ -21,7 +21,7 @@ resource "azurerm_resource_group" "example" {
 }
 
 resource "azurerm_storage_account" "example" {
-  name                     = "examplestorageacc"
+  name                     = "examplestorageaccseun"
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
   account_tier             = "Standard"
@@ -29,6 +29,8 @@ resource "azurerm_storage_account" "example" {
   account_kind             = "StorageV2"
   is_hns_enabled           = "true"
 }
+
+
 
 resource "azurerm_storage_data_lake_gen2_filesystem" "gen1" {
   name               = "gen1"
