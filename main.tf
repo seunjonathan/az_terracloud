@@ -23,7 +23,7 @@ variable "ARM_SUBSCRIPTION_ID" {
 
 variable "ARM_CLIENT_ID" {
   description = "ARMCLIENTID"
-  # default = ""
+  default = ""
 }
 
 variable "ARM_CLIENT_SECRET" {
