@@ -54,13 +54,13 @@ resource "azurerm_storage_data_lake_gen2_filesystem" "gen1" {
   
   }
 
-  resource "azurerm_data_factory" "example" {
-  name                = "example"
+  resource "azurerm_data_factory" "exampleadf" {
+  name                = "exampleadf"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
 }
 
-resource "azurerm_data_factory_pipeline" "example" {
-  name            = "example"
-  data_factory_id = azurerm_data_factory.example.id
+resource "azurerm_data_factory_pipeline" "exampleadfp" {
+  name            = "exampleadfp"
+  data_factory_id = azurerm_data_factory.exampleadf.id
 }
