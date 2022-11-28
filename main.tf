@@ -53,3 +53,14 @@ resource "azurerm_storage_data_lake_gen2_filesystem" "gen1" {
   storage_account_id = azurerm_storage_account.example1.id
   
   }
+
+  resource "azurerm_data_factory" "example" {
+  name                = "example"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+}
+
+resource "azurerm_data_factory_pipeline" "example" {
+  name            = "example"
+  data_factory_id = azurerm_data_factory.example.id
+}
