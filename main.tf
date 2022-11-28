@@ -22,5 +22,4 @@ resource "azurerm_resource_group" "example" {
   tags = {
     environment = "dev"
   }
-
 }
